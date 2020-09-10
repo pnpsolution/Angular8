@@ -36,4 +36,5 @@ npm run ng g c page/reactive-form
 
 ```
 npm run ng g interface model/adv-form
+npm run ng g directive highlight
 ```

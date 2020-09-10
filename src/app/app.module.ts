@@ -11,6 +11,7 @@ import {
 } from '@angular/forms';
 import { BasicFormComponent } from './page/basic-form/basic-form.component';
 import { ReactiveFormComponent } from './page/reactive-form/reactive-form.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReactiveFormComponent } from './page/reactive-form/reactive-form.compon
     HomeComponent,
     AboutComponent,
     BasicFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

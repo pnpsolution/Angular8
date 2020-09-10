@@ -31,3 +31,9 @@
         </td>
     </tr>
 </table>
+<div>
+    {{ current | date: 'dd MMM y' | uppercase}}
+</div>
+<div>
+    {{ '1234567890123456' | trimCreditCard: 'x' : '-' | uppercase}}
+</div>

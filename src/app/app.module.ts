@@ -12,6 +12,7 @@ import {
 import { BasicFormComponent } from './page/basic-form/basic-form.component';
 import { ReactiveFormComponent } from './page/reactive-form/reactive-form.component';
 import { HighlightDirective } from './highlight.directive';
+import { TrimCreditCardPipe } from './pipe/trim-credit-card.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HighlightDirective } from './highlight.directive';
     AboutComponent,
     BasicFormComponent,
     ReactiveFormComponent,
-    HighlightDirective
+    HighlightDirective,
+    TrimCreditCardPipe
   ],
   imports: [
     BrowserModule,

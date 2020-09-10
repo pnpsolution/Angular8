@@ -37,4 +37,6 @@ npm run ng g c page/reactive-form
 ```
 npm run ng g interface model/adv-form
 npm run ng g directive highlight
+
+npm run ng g pipe pipe/trim-credit-card
 ```

@@ -14,6 +14,7 @@ export class ReactiveFormComponent implements OnInit {
   formSubmit: EventEmitter<AdvForm> = new EventEmitter();
 
   data: AdvForm[] = [];
+  current = new Date();
 
   constructor(fb: FormBuilder) {
     this.advForm = fb.group({

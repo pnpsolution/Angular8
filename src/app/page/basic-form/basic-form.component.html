@@ -1,0 +1,12 @@
+<form #basicForm="ngForm" (submit)="onSubmitForm2()">
+    <input name="code" ngModel required minlength="5" #code="ngModel" />
+    <input name="name" ngModel required #name="ngModel" />
+    <button type="submit">Save</button>
+</form>
+<span>
+    {{ basicForm.value | json}}
+</span>
+
+<div>Form valid is {{ basicForm.valid }}</div>
+<div>Code valid is {{ code.valid }} and value = {{code.value}}</div>
+<div>Name valid is {{ name.valid }} and value = {{name.value}}</div>

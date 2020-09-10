@@ -29,5 +29,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ```
 npm run ng g c page/home
 npm run ng g c page/about
+npm run ng g c page/basic-form
+npm run ng g c page/reactive-form
 
+```
+
+```
+npm run ng g interface model/adv-form
 ```

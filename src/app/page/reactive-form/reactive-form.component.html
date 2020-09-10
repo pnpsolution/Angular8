@@ -1,0 +1,26 @@
+<form [formGroup]="advForm" (submit)="onFormSubmit()">
+    <input formControlName="code">
+    <input formControlName="name">
+    <button [disabled]="advForm.invalid">Save</button>
+</form>
+<div *ngIf="advForm.valid else invalidForm">
+    <h1>Your input is valid</h1>
+</div>
+<ng-template #invalidForm>
+    <h1>Your input is invalid</h1>
+</ng-template>
+
+<div>{{ advForm.valid }} value is {{ advForm.value | json}}</div>
+<div>{{ advForm.get('code').valid}} value = {{ advForm.get('code').value}}</div>
+<div>{{ advForm.get('name').valid}} value = {{ advForm.get('name').value}}</div>
+
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let obj of data;let idx = index;" [ngClass]="{'active': idx%2==0}">
+        <td>{{ idx + 1}} {{ obj.code }}</td>
+        <td>{{ obj.name }}</td>
+    </tr>
+</table>

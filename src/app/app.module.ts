@@ -9,12 +9,16 @@ import {
   FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
+import { BasicFormComponent } from './page/basic-form/basic-form.component';
+import { ReactiveFormComponent } from './page/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    BasicFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,

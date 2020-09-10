@@ -16,4 +16,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onButtonClick(): void {
+    this.url = 'http://www.yahoo.com';
+  }
+
 }

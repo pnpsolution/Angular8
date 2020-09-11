@@ -22,4 +22,14 @@ export class UserService {
       `${environment.APIHOST}/user`, user
     );
   }
+
+  findById(id: string): Observable<User> {
+    return this.http.get<User>(`${environment.APIHOST}/user/findById/${id}`);
+  }
+
+  update(id: string, user: User): Observable<any> {
+    return this.http.put(
+      `${environment.APIHOST}/user/${id}`, user
+    );
+  }
 }

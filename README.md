@@ -57,4 +57,6 @@ npm run ng g c module/user/user-form
 
 npm run ng g service module/user/user
 npm run ng g interface module/user/model/user
+
+npm run ng g enum model/mode
 ```

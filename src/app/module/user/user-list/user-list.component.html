@@ -2,6 +2,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
+            <th></th>
             <th scope="col">#</th>
             <th scope="col">Email</th>
             <th scope="col">Password</th>
@@ -10,6 +11,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let d of users | async; let idx = index;">
+            <td><button class="btn btn-info" (click)="onEditClick(d._id)">Edit</button></td>
             <th scope="row">{{idx + 1}}. {{d._id}}</th>
             <td>{{d.email}}</td>
             <td>{{d.password}}</td>

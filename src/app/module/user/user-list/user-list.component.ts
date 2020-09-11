@@ -1,4 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
@@ -23,7 +24,8 @@ export class UserListComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private router: Router
   ) {
     // userService.findAll().subscribe(
     //   users => this.users = users
@@ -45,6 +47,10 @@ export class UserListComponent implements OnInit {
     this.title = title;
     this.body = body;
     this.modalRef = this.modalService.show(this.messageBox);
+  }
+
+  onEditClick(id: string): void {
+    this.router.navigate(['', 'admin', 'user', 'user-form', id]);
   }
 
 }

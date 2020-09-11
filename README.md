@@ -40,3 +40,11 @@ npm run ng g directive highlight
 
 npm run ng g pipe pipe/trim-credit-card
 ```
+
+```
+npm run ng g service service/login
+
+npm run ng g interface model/login-response
+
+npm run ng g c page/login
+```

@@ -13,6 +13,10 @@ import { BasicFormComponent } from './page/basic-form/basic-form.component';
 import { ReactiveFormComponent } from './page/reactive-form/reactive-form.component';
 import { HighlightDirective } from './highlight.directive';
 import { TrimCreditCardPipe } from './pipe/trim-credit-card.pipe';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './page/login/login.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -22,13 +26,17 @@ import { TrimCreditCardPipe } from './pipe/trim-credit-card.pipe';
     BasicFormComponent,
     ReactiveFormComponent,
     HighlightDirective,
-    TrimCreditCardPipe
+    TrimCreditCardPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

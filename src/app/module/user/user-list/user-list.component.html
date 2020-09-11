@@ -1,0 +1,34 @@
+<button class="btn btn-link" [routerLink]="['','admin', 'user', 'user-form']">Add</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of users | async; let idx = index;">
+            <th scope="row">{{idx + 1}}. {{d._id}}</th>
+            <td>{{d.email}}</td>
+            <td>{{d.password}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="onDeleteClick(d._id)">Del</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #messageBox>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{title}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        {{body}}
+    </div>
+</ng-template>

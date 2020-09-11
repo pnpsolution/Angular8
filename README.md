@@ -50,4 +50,11 @@ npm run ng g c page/login
 
 npm run ng g c page/pubic-zone
 npm run ng g c page/private-zone
+
+npm run ng g module module/user -- --routing
+npm run ng g c module/user/user-list
+npm run ng g c module/user/user-form
+
+npm run ng g service module/user/user
+npm run ng g interface module/user/model/user
 ```

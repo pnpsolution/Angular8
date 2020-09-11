@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/service/login.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   constructor(
     fb: FormBuilder,
     private loginService: LoginService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private router: Router
   ) {
     this.loginForm = fb.group({
       email: [null, [Validators.required, Validators.email]],
@@ -41,7 +43,7 @@ export class LoginComponent implements OnInit {
         if (!resp.success) {
           this.showMessage('Warning', resp.message);
         } else {
-          this.showMessage('Success', resp.token);
+          this.router.navigate(['about']);
         }
       }));
     } else {

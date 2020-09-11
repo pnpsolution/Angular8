@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './page/login/login.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { PubicZoneComponent } from './page/pubic-zone/pubic-zone.component';
+import { PrivateZoneComponent } from './page/private-zone/private-zone.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ReactiveFormComponent,
     HighlightDirective,
     TrimCreditCardPipe,
-    LoginComponent
+    LoginComponent,
+    PubicZoneComponent,
+    PrivateZoneComponent
   ],
   imports: [
     BrowserModule,

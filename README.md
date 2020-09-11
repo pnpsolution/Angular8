@@ -47,4 +47,7 @@ npm run ng g service service/login
 npm run ng g interface model/login-response
 
 npm run ng g c page/login
+
+npm run ng g c page/pubic-zone
+npm run ng g c page/private-zone
 ```

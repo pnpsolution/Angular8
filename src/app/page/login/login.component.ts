@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
         if (!resp.success) {
           this.showMessage('Warning', resp.message);
         } else {
+          sessionStorage.setItem('API-TOKEN', resp.token);
           this.router.navigate(['about']);
         }
       }));

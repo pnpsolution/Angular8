@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './guard/auth.guard';
+import { LoginGuard } from './guard/login.guard';
 import { AboutComponent } from './page/about/about.component';
 import { HomeComponent } from './page/home/home.component';
 import { LoginComponent } from './page/login/login.component';
@@ -14,7 +16,9 @@ const routes: Routes = [
     }, {
       path: 'about', component: AboutComponent
     }, {
-      path: 'login', component: LoginComponent
+      path: 'login',
+      component: LoginComponent,
+      canActivate: [LoginGuard]
     }, {
       path: '',
       redirectTo: 'home',
@@ -23,6 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'admin', component: PrivateZoneComponent,
+    canActivate: [AuthGuard],
     children: [{
       path: 'user',
       // loadChildren: './module/user/user.module#UserModule'

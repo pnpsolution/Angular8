@@ -60,3 +60,8 @@ npm run ng g interface module/user/model/user
 
 npm run ng g enum model/mode
 ```
+
+```
+npm run ng g guard guard/auth
+npm run ng g guard guard/login
+```

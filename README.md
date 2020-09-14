@@ -64,4 +64,6 @@ npm run ng g enum model/mode
 ```
 npm run ng g guard guard/auth
 npm run ng g guard guard/login
+
+npm run ng build -- --prod
 ```

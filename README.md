@@ -69,4 +69,11 @@ npm run ng build -- --prod
 
 npm install @ngx-translate/core --save
 npm install @ngx-translate/http-loader --save
+
+npm install @ngxs/store --save
+npm install @ngxs/cli -g
+
+ngxs --name counter --spec false --directory src/app/store
+
+npm install @ngxs/logger-plugin --save
 ```

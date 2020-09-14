@@ -1,4 +1,17 @@
 {
+    "title": "Please sign in",
     "email": "EMail",
-    "password": "Password"
+    "password": "Password",
+    "button": {
+        "login": "Sign In"
+    },
+    "message": {
+        "login": {
+            "fail": {
+                "title": "Error",
+                "body": "Invalid form value !!!"
+            }
+        }
+    },
+    "hello": "Hello World"
 }

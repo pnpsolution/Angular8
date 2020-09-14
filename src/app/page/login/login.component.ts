@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/service/login.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit {
     fb: FormBuilder,
     private loginService: LoginService,
     private modalService: BsModalService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {
     this.loginForm = fb.group({
       email: [null, [Validators.required, Validators.email]],
@@ -48,7 +50,14 @@ export class LoginComponent implements OnInit {
         }
       }));
     } else {
-      this.showMessage('Error', 'Invalid form value!!!');
+      this.translate.get(
+        'message.login.fail'
+      ).subscribe(message => {
+        this.showMessage(
+          message.title, message.body
+        );
+      });
+
     }
   }
 

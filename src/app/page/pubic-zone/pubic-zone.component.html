@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Navbar ({{ (counter$ | async).counter }})</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -17,6 +17,12 @@
             </li>
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['admin', 'user', 'user-list']">User</a>
+            </li>
+            <li class="nav-item" (click)="switchLang('en');">
+                <a class="nav-link">EN</a>
+            </li>
+            <li class="nav-item" (click)="switchLang('th');">
+                <a class=" nav-link">TH</a>
             </li>
         </ul>
     </div>

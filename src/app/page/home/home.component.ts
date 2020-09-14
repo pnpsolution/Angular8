@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { DecreaseAction } from 'src/app/store/state/counter.actions';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +13,19 @@ export class HomeComponent implements OnInit {
 
   url = 'http://www.google.com';
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
   }
 
   onButtonClick(): void {
     this.url = 'http://www.yahoo.com';
+  }
+
+  onDecreaseClick(): void {
+    this.store.dispatch(
+      new DecreaseAction(5)
+    );
   }
 
 }

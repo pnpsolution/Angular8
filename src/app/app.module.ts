@@ -21,6 +21,11 @@ import { PubicZoneComponent } from './page/pubic-zone/pubic-zone.component';
 import { PrivateZoneComponent } from './page/private-zone/private-zone.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgxsModule } from '@ngxs/store';
+import { CounterState } from './store/state/counter.state';
+import { environment } from 'src/environments/environment';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsStoragePluginModule, StorageOption } from '@ngxs/storage-plugin';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -53,6 +58,14 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
+    }),
+    NgxsModule.forRoot([CounterState], {
+      developmentMode: !environment.production
+    }),
+    NgxsLoggerPluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot({
+      key: [CounterState],
+      storage: StorageOption.SessionStorage
     })
   ],
   providers: [],

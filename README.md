@@ -66,4 +66,7 @@ npm run ng g guard guard/auth
 npm run ng g guard guard/login
 
 npm run ng build -- --prod
+
+npm install @ngx-translate/core --save
+npm install @ngx-translate/http-loader --save
 ```
